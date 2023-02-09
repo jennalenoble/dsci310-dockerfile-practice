@@ -21,3 +21,5 @@ CMD ["/init"]
 COPY renv.lock .
 COPY renv renv
 COPY .Rprofile .
+
+# added change to dockerfile
