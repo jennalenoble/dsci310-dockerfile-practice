@@ -12,7 +12,12 @@ ENV PANDOC_VERSION=default
 
 RUN /rocker_scripts/install_rstudio.sh
 RUN /rocker_scripts/install_pandoc.sh
+RUN Rscript -e "install.packages('cowsay', repos='https://cran.us.r-project.org')"
 
 EXPOSE 8787
 
 CMD ["/init"]
+
+COPY renv.lock .
+COPY renv renv
+COPY .Rprofile .
